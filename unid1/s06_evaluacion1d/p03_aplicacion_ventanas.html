@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en"> <!--Lenguaje-->
+<head> <!--Cabecera-->
+	<meta charset="UTF-8"> <!--Caracteres permitos-->
+	<meta http-equiv="X-UA-Compatible" content="IE=chrome">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link rel="stylesheet" href="css/estilosEval1.css">
+	<script src="js/arrayAlumnos.js"></script> <!--Llamar a js-->
+	<script src="js/form03funcion.js"></script>
+</head>
+<body>
+	<h1>Aplicación 3 - Ventanas</h1> <!--H1=titulo por jerarquia-->
+	<div id="content">
+	<script>
+		var valor = prompt("¿Cuantos estudiantes de ambos TURNOS desea ver?", "1"); /*--Promt=Asegurar valor 1*/
+			if(valor > 0 && valor <= alumnos.length) /*Condicion*/
+			{
+				for (var i = 0; i < valor; i++){
+					var num = alumnos [i][0];
+					var nom = alumnos [i][1];
+					var ape = alumnos [i][2];
+                    var turno = fnTurno(alumnos[i][3]);
+					var genero = fnGenero(alumnos[i][4]);
+					var res = (i+1);
+					fnGenerarTabla(res,num,nom,ape,turno,genero);
+				}
+			}else{
+				alert("Solo se tiene registrado "+alumnos.length+" alumnos"); /*length=contar longitud o numero de elementos*/
+				document.writeln("<h2>Intentelo nuevamente...</h2>")
+			}
+	</script>
+	</div>
+</body>
+</html>
